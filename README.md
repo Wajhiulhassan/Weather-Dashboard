@@ -1,17 +1,22 @@
-# Weather Dashboard CLI
+# Weather Dashboard CLI (Version 3)
 
-A simple Python command-line weather dashboard that fetches current weather data using the OpenWeatherMap API.
+A Python command-line weather dashboard that fetches current weather data from the OpenWeatherMap API. Version 3 adds unit selection, a help menu, and more detailed weather output.
 
-## What it does
+## What is new in Version 3
 
-- Prompts the user for a city name
-- Requests current weather data from OpenWeatherMap
-- Displays weather description, temperature, humidity, and wind speed
-- Supports repeated city lookups until the user types `exit`
+- Added temperature units selection: Celsius, Fahrenheit, or Kelvin
+- Added a help menu with commands
+- Expanded weather output to include:
+  - Feels like temperature
+  - Pressure
+  - Visibility
+  - Sunrise and sunset times
+- Better error handling for network timeouts and invalid city names
 
 ## Files
 
 - `weather.py` — main Python script for the weather dashboard
+- `requirements.txt` — required external Python package
 - `README.md` — project documentation
 
 ## Requirements
@@ -29,42 +34,69 @@ A simple Python command-line weather dashboard that fetches current weather data
 python -m pip install -r requirements.txt
 ```
 
-2. Optionally set your OpenWeatherMap API key:
+2. Set your OpenWeatherMap API key:
 
 ```powershell
 setx OPENWEATHER_API_KEY "your_api_key_here"
 ```
 
-3. Open PowerShell or Command Prompt in the `Weather-Dashboard` folder.
-4. Run:
+3. Restart PowerShell or open a new terminal.
+4. Change to the `Weather-Dashboard` folder:
+
+```powershell
+cd "E:\CYBERSECURITY\All Semester\Programming Project\Weather-Dashboard"
+```
+
+5. Run:
 
 ```powershell
 python weather.py
 ```
 
-5. Enter a city name when prompted.
-6. Type `exit` to quit.
+## Commands
 
-## Example
+- `help` — Show the command menu
+- `units` — Change temperature units to Celsius, Fahrenheit, or Kelvin
+- `exit` — Close the dashboard
+- `<city name>` — Get weather for the entered city
+
+## Example session
 
 ```text
-WEATHER DASHBOARD (CLI)
+WEATHER DASHBOARD (Version 3)
 
-Enter city name (or 'exit'): London
+Commands:
+  help          - Show this help menu
+  units         - Change temperature units (C/F/K)
+  exit          - Quit the app
+  <city name>   - Get weather for a city
 
- Weather in London:
-   Clear sky
-   Temperature: 15°C
-   Humidity: 60%
-   Wind speed: 3.5 m/s
+Current units: metric (°C)
+
+Enter city name or command: London
+
+Weather in London (metric):
+  Broken clouds
+  Temperature: 12°C
+  Feels like: 10°C
+  Humidity: 67%
+  Pressure: 1016 hPa
+  Wind speed: 4.1 m/s
+  Visibility: 10000 m
+  Sunrise: 05:18
+  Sunset: 20:31
 ```
 
 ## Notes
 
-- The script uses metric units (Celsius) for temperature.
-- If the city is not found, an error message is shown.
-- If there is a network issue, a network error message is displayed.
+- `OPENWEATHER_API_KEY` must be set in your environment before running the script.
+- The app supports three unit modes:
+  - `C` for Celsius
+  - `F` for Fahrenheit
+  - `K` for Kelvin
+- This version includes expanded weather details and safer API key handling.
 
-## Customize
+## Important
 
-- To use your own OpenWeatherMap API key, replace the `API_KEY` value in `weather.py` with your key.
+- Do not hardcode your API key into `weather.py` if you plan to upload this project to GitHub.
+- Keep your `.gitignore` or use environment variables to protect sensitive values.
