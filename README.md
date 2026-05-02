@@ -26,18 +26,24 @@ A simple Python command-line weather dashboard that fetches current weather data
 1. Install the required Python library:
 
 ```powershell
-python -m pip install requests
+python -m pip install -r requirements.txt
 ```
 
-2. Open PowerShell or Command Prompt in the `Weather-Dashboard` folder.
-3. Run:
+2. Optionally set your OpenWeatherMap API key:
+
+```powershell
+setx OPENWEATHER_API_KEY "your_api_key_here"
+```
+
+3. Open PowerShell or Command Prompt in the `Weather-Dashboard` folder.
+4. Run:
 
 ```powershell
 python weather.py
 ```
 
-4. Enter a city name when prompted.
-5. Type `exit` to quit.
+5. Enter a city name when prompted.
+6. Type `exit` to quit.
 
 ## Example
 

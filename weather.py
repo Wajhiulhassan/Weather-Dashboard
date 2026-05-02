@@ -1,6 +1,7 @@
+import os
 import requests
 
-API_KEY = "a80b3cdbdbd400ea2692ef6ac16ac266"  
+API_KEY = os.getenv("OPENWEATHER_API_KEY", "")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 def get_weather(city):
@@ -28,6 +29,10 @@ def get_weather(city):
         print(f"Network error: {e}")
 
 def main():
+    if not API_KEY:
+        print("Missing OpenWeatherMap API key. Set OPENWEATHER_API_KEY as an environment variable.")
+        return
+
     print("WEATHER DASHBOARD (CLI)")
     while True:
         city = input("\nEnter city name (or 'exit'): ").strip()
