@@ -1,21 +1,18 @@
-# Weather Dashboard CLI (Version 3)
+﻿# Weather Dashboard UI (Version 4)
 
-A Python command-line weather dashboard that fetches current weather data from the OpenWeatherMap API. Version 3 adds unit selection, a help menu, and more detailed weather output.
+A Python desktop weather dashboard with a graphical user interface (UI) built using tkinter. Version 4 introduces a modern UI/UX experience with unit selection, live status updates, and a clear results display.
 
-## What is new in Version 3
+## What is new in Version 4
 
-- Added temperature units selection: Celsius, Fahrenheit, or Kelvin
-- Added a help menu with commands
-- Expanded weather output to include:
-  - Feels like temperature
-  - Pressure
-  - Visibility
-  - Sunrise and sunset times
-- Better error handling for network timeouts and invalid city names
+- Fully graphical UI with buttons, inputs, and result panel
+- Unit selection for Celsius, Fahrenheit, and Kelvin
+- Status feedback for loading, errors, and success
+- Clear display of weather details in a styled panel
+- Improved UX for searching and clearing results
 
 ## Files
 
-- `weather.py` — main Python script for the weather dashboard
+- `weather.py` — main Python application with Tkinter UI
 - `requirements.txt` — required external Python package
 - `README.md` — project documentation
 
@@ -47,56 +44,32 @@ setx OPENWEATHER_API_KEY "your_api_key_here"
 cd "E:\CYBERSECURITY\All Semester\Programming Project\Weather-Dashboard"
 ```
 
-5. Run:
+5. Run the UI application:
 
 ```powershell
 python weather.py
 ```
 
-## Commands
+## UI Features
 
-- `help` — Show the command menu
-- `units` — Change temperature units to Celsius, Fahrenheit, or Kelvin
-- `exit` — Close the dashboard
-- `<city name>` — Get weather for the entered city
+- Enter a city name and click **Get Weather**
+- Choose between **Celsius**, **Fahrenheit**, or **Kelvin**
+- Click **Clear** to reset the output panel
+- See a status message for loading, errors, or success
 
-## Example session
+## Weather details shown
 
-```text
-WEATHER DASHBOARD (Version 3)
-
-Commands:
-  help          - Show this help menu
-  units         - Change temperature units (C/F/K)
-  exit          - Quit the app
-  <city name>   - Get weather for a city
-
-Current units: metric (°C)
-
-Enter city name or command: London
-
-Weather in London (metric):
-  Broken clouds
-  Temperature: 12°C
-  Feels like: 10°C
-  Humidity: 67%
-  Pressure: 1016 hPa
-  Wind speed: 4.1 m/s
-  Visibility: 10000 m
-  Sunrise: 05:18
-  Sunset: 20:31
-```
+- Description
+- Temperature
+- Feels like temperature
+- Humidity
+- Pressure
+- Wind speed
+- Visibility
+- Sunrise and sunset times
 
 ## Notes
 
-- `OPENWEATHER_API_KEY` must be set in your environment before running the script.
-- The app supports three unit modes:
-  - `C` for Celsius
-  - `F` for Fahrenheit
-  - `K` for Kelvin
-- This version includes expanded weather details and safer API key handling.
-
-## Important
-
-- Do not hardcode your API key into `weather.py` if you plan to upload this project to GitHub.
-- Keep your `.gitignore` or use environment variables to protect sensitive values.
+- `OPENWEATHER_API_KEY` must be set in your environment before running the app.
+- The UI is built with tkinter and works on Windows.
+- Do not hardcode your API key into `weather.py` if you upload this project to GitHub.
